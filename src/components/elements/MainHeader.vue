@@ -1,19 +1,15 @@
 <script setup>
-import { useDark, useToggle} from '@vueuse/core'
-
-const isDark = useDark()
-
-const toggleDark = useToggle(isDark)
-
 defineProps({
   formNumber: Number,
   formId: String,
   formHref: String,
+  isDark: Boolean, 
+  toggleDark: Function 
 })
-</script>
+</script> 
 
 <template>
-    <div class="mt-24 first:mt-0">
+    <div class="mt-24 first:mt-0" >
         <div class="sm:flex sm:items-center sm:justify-between">
             <div class="flex items-center gap-4">
                 <h2 id="formId" class="cursor-pointer font-medium text-slate-900 sm:text-lg">

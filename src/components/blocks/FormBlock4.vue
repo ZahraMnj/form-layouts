@@ -6,6 +6,10 @@ import CancelBottun from '../elements/CancelBottun.vue';
 import DropdownDefault from '../elements/DropdownDefault.vue';
 import RadioGroupButtons from '../elements/RadioGroupButtons.vue';
 
+const isDark = ref(false);
+const toggleDark = () => {
+    isDark.value = !isDark.value;
+};
 
 const employeesOptions = ref([
     { value: '1-9' },
@@ -38,7 +42,8 @@ const workspaceOptions = ref([
 </script>
 
 <template>
-    <MainHeader :formNumber="4" formId="form-layout-4" formHref="#form-layout-4" />
+    <MainHeader :formNumber="4" formId="form-layout-4" formHref="#form-layout-4" :isDark="isDark" :toggleDark="toggleDark"/>
+    <div :class="{ 'dark': isDark }">
 
     <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">
         <div class="w-5/6 sm:max-w-2xl mx-auto">
@@ -102,5 +107,6 @@ const workspaceOptions = ref([
                 </div>
             </form>
         </div>
+    </div>
     </div>
 </template>

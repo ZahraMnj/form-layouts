@@ -6,6 +6,10 @@ import DropdownBox from '../elements/DropdownBox.vue';
 import CheckBox from '../elements/CheckBox.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
 
+const isDark = ref(false);
+const toggleDark = () => {
+    isDark.value = !isDark.value;
+};
 
 const visibilityOptions = ref([
     { value: 'Public' },
@@ -26,7 +30,9 @@ const usageOptions = ref([
 </script>
 
 <template>
-    <MainHeader :formNumber="3" formId="form-layout-3" formHref="#form-layout-3" />
+    <MainHeader :formNumber="3" formId="form-layout-3" formHref="#form-layout-3" :isDark="isDark"
+        :toggleDark="toggleDark"/>
+    <div :class="{ 'dark': isDark }">
 
     <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">
         <form action="">
@@ -151,6 +157,6 @@ const usageOptions = ref([
             <CancelBottun label="Save settings" :cancel="false" :submit="true" />
 
         </div>
-
+    </div>
     </div>
 </template>
