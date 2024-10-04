@@ -30,6 +30,9 @@ const selectOption = (value) => {
                     <label :for="option.value"
                         class="text-sm font-semibold leading-none text-gray-900 dark:text-gray-50 ">{{ option.value
                         }}</label>
+                    <span v-show="option.recomended"
+                        class="inline-flex items-center gap-x-1 whitespace-nowrap rounded-md ml-1.5 px-2 py-1 text-xs font-medium ring-1 ring-inset bg-gray-50 text-gray-900 ring-gray-500/30 dark:bg-gray-400/10 dark:text-gray-400 dark:ring-gray-400/20">recommended
+                    </span>
                 </p>
                 <ul role="list"
                     class="text-sm divide-y divide-gray-200 mt-3 text-gray-600 dark:divide-gray-800 dark:text-gray-400">

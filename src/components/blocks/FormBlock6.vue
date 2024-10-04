@@ -34,6 +34,7 @@ const planOptions = ref([
             { value: 'Up to 10 user seats' },
             { value: 'Community support' },
         ],
+        recomended: false
     },
     {
         value: 'Premium',
@@ -44,6 +45,7 @@ const planOptions = ref([
             { value: 'Up to 50 user seats' },
             { value: 'Premium Slack support' },
         ],
+        recomended: true
     },
     {
         value: 'Enterprise',
@@ -55,6 +57,7 @@ const planOptions = ref([
             { value: '99.99% SLA' },
             { value: 'Volume discount' },
         ],
+        recomended: false
     },
 ])
 
