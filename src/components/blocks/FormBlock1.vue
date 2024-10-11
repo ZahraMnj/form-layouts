@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import MainHeader from '../elements/MainHeader.vue';
 import InputElement from '../elements/InputElement.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
+import HeaderLayout from "../elements/HeaderLayout.vue";
 
 const isDark = ref(false);
 const toggleDark = () => {
@@ -12,6 +13,7 @@ const toggleDark = () => {
 </script>
 
 <template>
+  <HeaderLayout form-id="form-layout-1" :is-dark="isDark" form-number="1" form-href="#form-layout-1" @update:toggle="isDark = $event"/>
     <MainHeader :formNumber="1" formId="form-layout-1" formHref="#form-layout-1" :isDark="isDark" :toggleDark="toggleDark" />
     <div :class="{ 'dark': isDark }">
 
