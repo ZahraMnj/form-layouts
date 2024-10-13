@@ -8,8 +8,8 @@ defineProps({
 })
 </script> 
 
-<template>
-    <div class="mt-24 first:mt-0" >
+<template> 
+    <div class="mt-24 " >
         <div class="sm:flex sm:items-center sm:justify-between">
             <div class="flex items-center gap-4">
                 <h2 id="formId" class="cursor-pointer font-medium text-slate-900 sm:text-lg">

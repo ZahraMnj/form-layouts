@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import MainHeader from '../elements/MainHeader.vue';
+import HeaderLayout from '../elements/HeaderLayout.vue';
 import DropdownDefault from '../elements/DropdownDefault.vue';
 import InputElement from '../elements/InputElement.vue';
 import DropdownBox from '../elements/DropdownBox.vue';
@@ -8,9 +8,6 @@ import RadioGroup6 from '../elements/RadioGroup6.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
 
 const isDark = ref(false);
-const toggleDark = () => {
-    isDark.value = !isDark.value;
-};
 
 const organizationOptions = ref([
     { value: 'Acme, Inc.' },
@@ -64,8 +61,8 @@ const planOptions = ref([
 </script>
 
 <template>
-    <MainHeader :formNumber="6" formId="form-layout-6" formHref="#form-layout-6" :isDark="isDark"
-        :toggleDark="toggleDark" />
+   <HeaderLayout form-id="form-layout-6" :is-dark="isDark" form-number="6" form-href="#form-layout-6"
+   @update:toggle="isDark = $event" />
     <div :class="{ 'dark': isDark }">
 
         <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">

@@ -1,11 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-const props = defineProps({
-  options: Array,
-  label: String,
-  id: String,
-});
+interface Prop{
+  options: any
+  label: string
+  id: string
+}
+
+const props = defineProps<Prop>()
 
 const selectedOption = ref(props.options[1]);
 const isOpen = ref(false);

@@ -1,10 +1,13 @@
-<script setup>
-const props = defineProps({
-  label: String,
-  cancel: Boolean,
-  submit: Boolean,
-  buttonClass: String,
-})
+<script setup lang="ts">
+interface Prop{
+  label: string
+  cancel: boolean
+  submit: boolean
+  buttonClass: string
+}
+
+const props = defineProps<Prop>()
+
 </script>
 
 <template>

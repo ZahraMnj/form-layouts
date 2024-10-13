@@ -1,20 +1,15 @@
 <script setup>
 import { ref } from 'vue';
-import MainHeader from '../elements/MainHeader.vue';
 import InputElement from '../elements/InputElement.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
 import HeaderLayout from "../elements/HeaderLayout.vue";
 
 const isDark = ref(false);
-const toggleDark = () => {
-    isDark.value = !isDark.value;
-};
 
 </script>
 
 <template>
   <HeaderLayout form-id="form-layout-1" :is-dark="isDark" form-number="1" form-href="#form-layout-1" @update:toggle="isDark = $event"/>
-    <MainHeader :formNumber="1" formId="form-layout-1" formHref="#form-layout-1" :isDark="isDark" :toggleDark="toggleDark" />
     <div :class="{ 'dark': isDark }">
 
         <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">
@@ -30,8 +25,7 @@ const toggleDark = () => {
                     <div class="grid grid-cols-1 sm:grid-cols-6 gap-x-4 gap-y-6">
 
                         <div class="col-span-full sm:col-span-3">
-                            <InputElement label="First name" type="text" inputId="fisrt-name" placeholder="First name"
-                                require />
+                            <InputElement label="First name" type="text" input-id="fisrt-name" placeholder="First name"  require />
                         </div>
 
                         <div class="col-span-full sm:col-span-3">

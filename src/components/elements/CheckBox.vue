@@ -1,7 +1,9 @@
-<script setup>
-const props = defineProps({
-  options: Array,
-});
+<script setup lang="ts">
+interface Prop{
+    options: any
+}
+
+const props = defineProps<Prop>()
 </script>
 
 <template>

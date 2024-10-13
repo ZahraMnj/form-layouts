@@ -1,15 +1,12 @@
 <script setup>
 import { ref } from 'vue';
-import MainHeader from '../elements/MainHeader.vue';
+import HeaderLayout from '../elements/HeaderLayout.vue';
 import InputElement from '../elements/InputElement.vue';
 import DropdownBox from '../elements/DropdownBox.vue';
 import RadioBottuns from '../elements/RadioBottuns.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
 
 const isDark = ref(false);
-const toggleDark = () => {
-    isDark.value = !isDark.value;
-};
 
 const visibilityOptions = ref([
     { value: 'Public' },
@@ -25,9 +22,7 @@ const newsletterOptions = ref([
 </script>
 
 <template>
-
-    <MainHeader :formNumber="2" formId="form-layout-2" formHref="#form-layout-2" :isDark="isDark"
-        :toggleDark="toggleDark" />
+  <HeaderLayout form-id="form-layout-2" :is-dark="isDark" form-number="2" form-href="#form-layout-2" @update:toggle="isDark = $event"/>
     <div :class="{ 'dark': isDark }">
 
         <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">

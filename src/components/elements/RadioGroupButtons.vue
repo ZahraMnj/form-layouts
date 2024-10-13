@@ -1,10 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 
-const props = defineProps({
-    options: Array,
-    list: Boolean,
-});
+interface Prop{
+  options: any
+  list: boolean
+}
+
+const props = defineProps<Prop>()
 
 const selectedOption = ref('Starter');
 

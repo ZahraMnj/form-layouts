@@ -1,15 +1,12 @@
 <script setup>
 import { ref } from 'vue';
-import MainHeader from '../elements/MainHeader.vue';
+import HeaderLayout from '../elements/HeaderLayout.vue';
 import InputElement from '../elements/InputElement.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
 import DropdownDefault from '../elements/DropdownDefault.vue';
 import RadioGroupButtons from '../elements/RadioGroupButtons.vue';
 
 const isDark = ref(false);
-const toggleDark = () => {
-    isDark.value = !isDark.value;
-};
 
 const employeesOptions = ref([
     { value: '1-9' },
@@ -58,7 +55,8 @@ const workspaceOptions = ref([
 </script>
 
 <template>
-    <MainHeader :formNumber="5" formId="form-layout-5" formHref="#form-layout-5" :isDark="isDark" :toggleDark="toggleDark"/>
+    <HeaderLayout form-id="form-layout-5" :is-dark="isDark" form-number="5" form-href="#form-layout-5"
+    @update:toggle="isDark = $event" />
     <div :class="{ 'dark': isDark }">
 
     <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">

@@ -1,13 +1,14 @@
-<script setup>
-defineProps({
-    label: String,
-    require: Boolean,
-    type: String,
-    inputId: String,
-    placeholder: String,
-    disable: Boolean,
-    
-})
+<script setup lang="ts">
+interface Prop{
+    label: string
+    require: boolean
+    type: string
+    inputId: string
+    placeholder: string
+    disable: boolean
+}
+
+const props = defineProps<Prop>()
 
 </script>
 

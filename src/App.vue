@@ -10,7 +10,7 @@ import FormBlock6 from './components/blocks/FormBlock6.vue';
 
 <template>
   <main class="mx-auto max-w-7xl p-4 lg:px-8">
-    <div class="mt-20 overflow-hidden px-px pb-px">
+    <div class="overflow-hidden px-px pb-px">
       <FormBlock1 />
       <FormBlock2 />
       <FormBlock3 />

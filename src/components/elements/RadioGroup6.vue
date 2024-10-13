@@ -1,9 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 
-const props = defineProps({
-    options: Array,
-});
+interface Prop{
+  options: any
+}
+
+const props = defineProps<Prop>()
+
 const selectedOption = ref('Hobby');
 
 const selectOption = (value) => {
