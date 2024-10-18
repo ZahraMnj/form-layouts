@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
     </button>
     <ul id="dropdown-options" v-show="isOpen"
       class="absolute top-10 left-0 w-full bg-white border border-solid border-neutral-300 rounded mt-1 z-10">
-      <li v-for="option in props.options" :key="option.value" :value="option.value" @click="selectOption(option)"
+      <li v-for="option in options" :key="option.value" :value="option.value" @click="selectOption(option)"
         :class="[
           'px-4 py-2 m-1 rounded-sm text-sm hover:bg-gray-100 cursor-pointer',
           { 'rounded-sm font-bold relative': option.value === selectedOption.value }

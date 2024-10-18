@@ -5,6 +5,8 @@ import InputElement from '../elements/InputElement.vue';
 import DropdownBox from '../elements/DropdownBox.vue';
 import RadioBottuns from '../elements/RadioBottuns.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
+import DropDown from "../elements/ADropDown.vue";
+import ADropDown from "../elements/ADropDown.vue";
 
 const isDark = ref(false);
 
@@ -83,9 +85,11 @@ const newsletterOptions = ref([
                                 placeholder="Test workspace" />
                         </div>
 
-                        <div class="">
-                            <DropdownBox :options="visibilityOptions" label="Visibility" id="visibility" />
-                        </div>
+
+                      <div>
+                        <ADropDown id="exam-dropDown" :options="visibilityOptions" label="Visibility"  default-option />
+                      </div>
+
 
                         <div class="sm:col-span-3 row-span-2">
                             <label class="text-sm leading-none text-gray-900 dark:text-gray-50 font-medium"

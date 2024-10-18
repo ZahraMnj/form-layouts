@@ -2,7 +2,7 @@
 import {Icon} from "@iconify/vue";
 
 interface Prop{
-  formNumber: number
+  formNumber: string
   formId: string
   formHref: string
   isDark: boolean

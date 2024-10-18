@@ -5,6 +5,7 @@ import InputElement from '../elements/InputElement.vue';
 import CancelBottun from '../elements/CancelBottun.vue';
 import DropdownDefault from '../elements/DropdownDefault.vue';
 import RadioGroupButtons from '../elements/RadioGroupButtons.vue';
+import ADropDown from "../elements/ADropDown.vue";
 
 const isDark = ref(false);
 
@@ -70,8 +71,12 @@ const workspaceOptions = ref([
                         </div>
 
                         <div class="col-span-full sm:col-span-3">
-                            <DropdownDefault :options="employeesOptions" label="Company size (employees)"
-                                id="employees" />
+                          <ADropDown
+                              id="employees"
+                              :options="employeesOptions"
+                              label="Company size (employees)"
+                              place-holder="Select..." />
+
                         </div>
 
                         <div
