@@ -33,7 +33,7 @@ defineProps({
                     </svg>
                 </button>
                 <div class="hidden h-6 w-px bg-slate-200 sm:block"></div>
-                <a class="w-fit cursor-pointer items-center justify-center rounded-md px-3 py-2 sm:text-sm disabled:pointer-events-none disabled:opacity-60 transition-all duration-100 ease-in-out focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 bg-transparent group inline-flex gap-2 pl-2 pr-1 text-sm font-semibold text-blue-600"
+                <a class="w-fit cursor-pointer items-center justify-center rounded-md px-3 py-2 sm:text-sm disabled:pointer-events-none disabled:opacity-60 transition-all duration-100 ease-in-out focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 bg-transparent group inline-flex gap-2 pl-2 pr-1 text-sm font-semibold text-blue-600"
                     href="/get-access">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         fill="currentColor" aria-hidden="true" class="remixicon hidden size-5 shrink-0 sm:block">

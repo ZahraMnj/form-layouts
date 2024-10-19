@@ -2,10 +2,8 @@
 import { ref } from 'vue';
 import HeaderLayout from '../elements/HeaderLayout.vue';
 import InputElement from '../elements/InputElement.vue';
-import DropdownBox from '../elements/DropdownBox.vue';
 import RadioBottuns from '../elements/RadioBottuns.vue';
-import CancelBottun from '../elements/CancelBottun.vue';
-import DropDown from "../elements/ADropDown.vue";
+import AButton from '../elements/AButton.vue';
 import ADropDown from "../elements/ADropDown.vue";
 
 const isDark = ref(false);
@@ -24,7 +22,8 @@ const newsletterOptions = ref([
 </script>
 
 <template>
-  <HeaderLayout form-id="form-layout-2" :is-dark="isDark" form-number="2" form-href="#form-layout-2" @update:toggle="isDark = $event"/>
+    <HeaderLayout form-id="form-layout-2" :is-dark="isDark" form-number="2" form-href="#form-layout-2"
+        @update:toggle="isDark = $event" />
     <div :class="{ 'dark': isDark }">
 
         <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">
@@ -38,15 +37,15 @@ const newsletterOptions = ref([
 
                     <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="">
-                            <InputElement label="First name" type="text" inputId="fisrt-name" placeholder="Emma" />
+                            <InputElement label="First name" type="text" input-id="fisrt-name" placeholder="Emma" />
                         </div>
 
                         <div class="">
-                            <InputElement label="Last name" type="text" inputId="last-name" placeholder="Crown" />
+                            <InputElement label="Last name" type="text" input-id="last-name" placeholder="Crown" />
                         </div>
 
                         <div class="sm:col-span-2">
-                            <InputElement label="Email" type="text" input-id="email" placeholder="emma@compony.com" />
+                            <InputElement label="Email" type="email" input-id="email" placeholder="emma@compony.com" />
                         </div>
 
                         <div class="">
@@ -86,16 +85,17 @@ const newsletterOptions = ref([
                         </div>
 
 
-                      <div>
-                        <ADropDown id="exam-dropDown" :options="visibilityOptions" label="Visibility"  default-option />
-                      </div>
+                        <div>
+                            <ADropDown id="exam-dropDown" :options="visibilityOptions" label="Visibility"
+                                default-option />
+                        </div>
 
 
                         <div class="sm:col-span-3 row-span-2">
                             <label class="text-sm leading-none text-gray-900 dark:text-gray-50 font-medium"
                                 for="workspace-description">Workspace description</label>
                             <textarea
-                                class="flex min-h-[4rem] w-full rounded-md border px-3 py-1.5 mt-2 shadow-sm outline-none transition-all sm:text-sm text-gray-900 dark:text-gray-50 border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-blue-500 focus:dark:border-blue-700 fv8bj"
+                                class="flex min-h-[4rem] w-full rounded-md border px-3 py-1.5 mt-2 shadow-sm outline-none transition-all sm:text-sm text-gray-900 dark:text-gray-50 border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-primary focus:dark:border-blue-700 fv8bj"
                                 id="workspace-description" name="workspace-description" placeholder="Type..." rows="4">
                         </textarea>
                             <p class="text-gray-500 text-xs leading-4 mt-2 dark:text-gray-500">Note: description
@@ -143,9 +143,8 @@ const newsletterOptions = ref([
             </div>
 
             <div class="flex justify-end items-center space-x-4">
-                <CancelBottun label="Go back" :cancel="true" :submit="false" />
-                <CancelBottun label="Save settings" :cancel="false" :submit="true" />
-
+                <AButton outline>Go Back</AButton>
+                <AButton primary>Save settings</AButton>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import InputElement from '../elements/InputElement.vue';
-import CancelBottun from '../elements/CancelBottun.vue';
 import HeaderLayout from "../elements/HeaderLayout.vue";
+import AButton from '../elements/AButton.vue';
 
 const isDark = ref(false);
 
@@ -34,7 +34,7 @@ const isDark = ref(false);
                         </div>
 
                         <div class="col-span-full sm:col-start-1 sm:col-end-7 pt-2">
-                            <InputElement label="Email" type="text" input-id="email" placeholder="Email" require />
+                            <InputElement label="Email" type="email" input-id="email" placeholder="Email" require />
                         </div>
 
                         <div class="col-span-full sm:col-start-1 sm:col-end-7 pt-2">
@@ -62,8 +62,8 @@ const isDark = ref(false);
                     </div>
 
                     <div class="flex items-center justify-end space-x-4">
-                        <CancelBottun label="Cancel" :cancel="true" :submit="false" />
-                        <CancelBottun label="Submit" :cancel="false" :submit="true" />
+                        <AButton outline>Cancel </AButton>
+                        <AButton primary>Submit </AButton>
                     </div>
                 </form>
             </div>

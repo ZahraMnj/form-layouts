@@ -2,8 +2,7 @@
 import { ref } from 'vue';
 import HeaderLayout from '../elements/HeaderLayout.vue';
 import InputElement from '../elements/InputElement.vue';
-import CancelBottun from '../elements/CancelBottun.vue';
-import DropdownDefault from '../elements/DropdownDefault.vue';
+import AButton from '../elements/AButton.vue';
 import RadioGroupButtons from '../elements/RadioGroupButtons.vue';
 import ADropDown from "../elements/ADropDown.vue";
 
@@ -53,16 +52,16 @@ const workspaceOptions = ref([
                 <form class="mt-8">
                     <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
                         <div class="col-span-full sm:col-span-3">
-                            <InputElement label="First name" type="text" inputId="fisrt-name" placeholder="Emma"
+                            <InputElement label="First name" type="text" input-id="fisrt-name" placeholder="Emma"
                                 require />
                         </div>
 
                         <div class="col-span-full sm:col-span-3">
-                            <InputElement label="Last name" type="text" inputId="last-name" placeholder="Crown" />
+                            <InputElement label="Last name" type="text" input-id="last-name" placeholder="Crown" />
                         </div>
 
                         <div class="col-span-full sm:col-start-1 sm:col-end-7 pt-2">
-                            <InputElement label="Work email" type="text" input-id="email" placeholder="emma@compony.com"
+                            <InputElement label="Work email" type="email" input-id="email" placeholder="emma@compony.com"
                                 require />
                         </div>
 
@@ -71,12 +70,8 @@ const workspaceOptions = ref([
                         </div>
 
                         <div class="col-span-full sm:col-span-3">
-                          <ADropDown
-                              id="employees"
-                              :options="employeesOptions"
-                              label="Company size (employees)"
-                              place-holder="Select..." />
-
+                            <ADropDown id="employees" :options="employeesOptions" label="Company size (employees)"
+                                place-holder="Select..." />
                         </div>
 
                         <div
@@ -109,8 +104,8 @@ const workspaceOptions = ref([
                     </div>
 
                     <div class="flex justify-end items-center space-x-4">
-                        <CancelBottun label="Go back" :cancel="true" :submit="false" />
-                        <CancelBottun label="Apply" :cancel="false" :submit="true" />
+                        <AButton outline>Go back</AButton>
+                        <AButton primary>Apply</AButton>
                     </div>
                 </form>
             </div>

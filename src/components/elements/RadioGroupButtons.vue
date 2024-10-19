@@ -3,7 +3,7 @@ import { ref } from 'vue';
 
 interface Prop{
   options: any
-  list: boolean
+  list?: boolean
 }
 
 const props = defineProps<Prop>()
@@ -17,23 +17,23 @@ const selectOption = (value) => {
 
 <template>
     <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <button v-for="option in options" :key="option.value" type="button" role="radio"
+        <button v-for="option in options" :key="option.value" type="button" role="radio" :id="option.value"
             :data-state="selectedOption === option.value ? 'checked' : 'unchecked'" :value="option.value"
             @click="selectOption(option.value)"
-            class="group relative w-full rounded-md border p-4 text-left shadow-sm flex justify-between items-start transition focus:outline-none bg-white dark:bg-gray-950 border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-blue-500 focus:dark:border-blue-700">
+            class="group relative w-full rounded-md border p-4 text-left shadow-sm flex justify-between items-start transition focus:outline-none bg-white dark:bg-gray-950 border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-primary focus:dark:border-blue-700">
             <div class="w-full flex justify-between flex-col">
                 <div>
                     <label :for="option.value"
                         class="text-sm leading-none text-gray-900 dark:text-gray-50 font-medium">{{ option.label
                         }}</label>
-                    <p :id="option.value" class="text-sm tracking-wider mt-1 text-gray-500 dark:text-gray-500">{{
+                    <p  class="text-sm tracking-wider mt-1 text-gray-500 dark:text-gray-500">{{
                         option.description }}
                     </p>
                 </div>
                 <span class="text-gray-900 text-sm font-medium mt-6 dark:text-gray-50">{{ option.price }}</span>
             </div>
             <div class="relative flex size-4 shrink-0 appearance-none items-center justify-center rounded-full border shadow-sm border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950"
-                :class="{ 'group-data-[state=checked]:border-0 group-data-[state=checked]:border-transparent group-data-[state=checked]:bg-blue-500': selectedOption === option.value }">
+                :class="{ 'group-data-[state=checked]:border-0 group-data-[state=checked]:border-transparent group-data-[state=checked]:bg-primary': selectedOption === option.value }">
                 <span class="flex items-center justify-center invisible"
                     :class="{ 'group-data-[state=checked]:visible': selectedOption === option.value }">
                     <div class="size-1.5 shrink-0 rounded-full bg-white"></div>

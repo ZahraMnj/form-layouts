@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, onMounted, onBeforeUnmount } from 'vue';
 
-interface Prop{
+interface Prop{ 
   options: any
   label: string
   id: string
@@ -41,12 +41,12 @@ onBeforeUnmount(() => {
 });
 </script>
 
-
+ 
 <template>
   <div>
     <label class="text-sm leading-none text-gray-900 dark:text-gray-50 font-medium" :for="id">{{ label }}</label>
     <div class="relative">
-      <button type="button" :id="id" :name="id" @click="toggleDropdown" class="group/trigger flex w-full select-none items-center justify-between gap-2 truncate rounded-md border mt-2 px-3 py-2 shadow-sm outline-none transition sm:text-sm border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 hover:dark:bg-gray-950/50 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-blue-500 focus:dark:border-blue-700">
+      <button type="button" :id="id" :name="id" @click="toggleDropdown" class="group/trigger flex w-full select-none items-center justify-between gap-2 truncate rounded-md border mt-2 px-3 py-2 shadow-sm outline-none transition sm:text-sm border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 hover:dark:bg-gray-950/50 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-primary focus:dark:border-blue-700">
                 <span class="truncate">
                     <span style="pointer-events: none;" :class="{'text-gray-500 dark:text-gray-500' : placeHolder == selectedOption.value  }">{{ selectedOption.value }}</span>
                 </span>

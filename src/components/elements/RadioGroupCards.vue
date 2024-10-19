@@ -15,13 +15,13 @@ const selectOption = (value) => {
 </script>
 
 <template>
-    <button v-for="option in options" :key="option.value" type="button" role="radio"
+    <button v-for="option in options" :key="option.value" type="button" role="radio" :id="option.value"
         :data-state="selectedOption === option.value ? 'checked' : 'unchecked'" :value="option.value"
         @click="selectOption(option.value)"
-        class="group relative w-full rounded-md border text-left shadow-sm transition focus:outline-none bg-white dark:bg-gray-950 border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-blue-500 focus:dark:border-blue-700">
+        class="group relative w-full rounded-md border text-left shadow-sm transition focus:outline-none bg-white dark:bg-gray-950 border-gray-300 dark:border-gray-800 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-primary focus:dark:border-blue-700">
         <div class="flex items-start space-x-4 p-6">
             <div
-                class="relative flex size-4 shrink-0 appearance-none items-center justify-center rounded-full border shadow-sm border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950 group-data-[state=checked]:border-0 group-data-[state=checked]:border-transparent group-data-[state=checked]:bg-blue-500 outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 mt-1">
+                class="relative flex size-4 shrink-0 appearance-none items-center justify-center rounded-full border shadow-sm border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-950 group-data-[state=checked]:border-0 group-data-[state=checked]:border-transparent group-data-[state=checked]:bg-primary outline outline-offset-2 outline-0 focus-visible:outline-2 outline-primary dark:outline-primary mt-1">
                 <span :data-state="selectedOption === option.value ? 'checked' : 'unchecked'"
                     class="flex items-center justify-center invisible group-data-[state=checked]:visible">
                     <div class="size size-1.5 shrink-0 rounded-full bg-white">
@@ -54,7 +54,7 @@ const selectOption = (value) => {
         <div
             class="flex justify-between items-center rounded-b-lg border-t border-gray-200 bg-gray-50 px-6 py-3 dark:border-gray-900 dark:bg-gray-900">
             <a href="#"
-                class="inline-flex items-center gap-1 text-sm hover:underline hover:underline-offset-4 text-blue-500 dark:text-blue-500">Learn
+                class="inline-flex items-center gap-1 text-sm hover:underline hover:underline-offset-4 text-primary dark:text-primary">Learn
                 more
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     aria-hidden="true" class="remixicon size-4">

@@ -1,11 +1,10 @@
 <script setup>
 import { ref } from 'vue';
 import HeaderLayout from '../elements/HeaderLayout.vue';
-import DropdownDefault from '../elements/DropdownDefault.vue';
 import InputElement from '../elements/InputElement.vue';
-import DropdownBox from '../elements/DropdownBox.vue';
-import RadioGroup6 from '../elements/RadioGroup6.vue';
-import CancelBottun from '../elements/CancelBottun.vue';
+import RadioGroupCards from '../elements/RadioGroupCards.vue';
+import AButton from '../elements/AButton.vue';
+import ADropDown from '../elements/ADropDown.vue';
 
 const isDark = ref(false);
 
@@ -61,8 +60,8 @@ const planOptions = ref([
 </script>
 
 <template>
-   <HeaderLayout form-id="form-layout-6" :is-dark="isDark" form-number="6" form-href="#form-layout-6"
-   @update:toggle="isDark = $event" />
+    <HeaderLayout form-id="form-layout-6" :is-dark="isDark" form-number="6" form-href="#form-layout-6"
+        @update:toggle="isDark = $event" />
     <div :class="{ 'dark': isDark }">
 
         <div class="rounded-lg p-4 sm:p-10 mt-4 border border-slate-200 bg-white transition-all dark:bg-gray-950 ">
@@ -73,17 +72,18 @@ const planOptions = ref([
                         <div class="space-y-4 md:space-y-6">
                             <div class="md:flex md:items-center md:space-x-4">
                                 <div class="md:w-48">
-                                    <DropdownDefault label="Organization" :options="organizationOptions" />
+                                    <ADropDown id="organization" label="Organization" :options="organizationOptions"
+                                        place-holder="Select..." />
                                 </div>
-                                <div class="w-full mt-4 md:mt-0">
-                                    <InputElement label="Workspace name" type="text" inputId="workspace-name"
-                                        placeholder="Type..." />
+                                <div class=" w-full mt-4 md:mt-0">
+                                        <InputElement label="Workspace name" type="text" input-id="workspace-name"
+                                            placeholder="Type..." />
                                 </div>
                             </div>
 
                             <div>
 
-                                <DropdownBox :options="regionOptions" label="Region" id="region" />
+                                <ADropDown id="region" :options="regionOptions" label="Region" default-option />
                                 <p class="text-xs mt-2 text-gray-500 dark:text-gray-500">For best performance, choose a
                                     region closest to your operations</p>
                             </div>
@@ -95,7 +95,7 @@ const planOptions = ref([
 
                         <div role="radiogroup" dir="ltr" class="grid gap-2 mt-4 outline-none">
                             <div class="space-y-4">
-                                <RadioGroup6 :options="planOptions" />
+                                <RadioGroupCards :options="planOptions" />
                             </div>
                         </div>
 
@@ -114,7 +114,7 @@ const planOptions = ref([
                                 <li class="flex items-center gap-2 py-2.5">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" aria-hidden="true"
-                                        class="remixicon size-5 text-blue-500 dark:text-blue-500">
+                                        class="remixicon size-5 text-primary dark:text-primary">
                                         <path
                                             d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z">
                                         </path>
@@ -124,7 +124,7 @@ const planOptions = ref([
                                 <li class="flex items-center gap-2 py-2.5">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" aria-hidden="true"
-                                        class="remixicon size-5 text-blue-500 dark:text-blue-500">
+                                        class="remixicon size-5 text-primary dark:text-primary">
                                         <path
                                             d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z">
                                         </path>
@@ -134,7 +134,7 @@ const planOptions = ref([
                                 <li class="flex items-center gap-2 py-2.5">
                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" aria-hidden="true"
-                                        class="remixicon size-5 text-blue-500 dark:text-blue-500">
+                                        class="remixicon size-5 text-primary dark:text-primary">
                                         <path
                                             d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z">
                                         </path>
@@ -163,8 +163,8 @@ const planOptions = ref([
                 </div>
 
                 <div class="flex justify-end items-center space-x-4">
-                    <CancelBottun label="Cancel" :cancel="true" :submit="false" />
-                    <CancelBottun label="Update" :cancel="false" :submit="true" />
+                    <AButton outline>Cancel</AButton>
+                    <AButton primary>Update</AButton>
                 </div>
             </form>
         </div>
